@@ -1,5 +1,3 @@
-import regex as re
-
 
 def find_regex_from_nfa(nfa):
     states = list(nfa.keys())
@@ -36,6 +34,7 @@ def find_regex_from_nfa(nfa):
 
     # Opposite course
     for k in range(1, num_states):
+        expr = ""
         for i in range(0, k):
             expr += "(" + matrix[i][i] + matrix[k][i] + ")"
             if i < k - 1:
